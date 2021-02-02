@@ -22,26 +22,26 @@
       <h2>Add item</h2>
       <p>Enter the item details</p>
 
-      <form>
+      <form data-bind="submit: handleSubmit">
         <div class="field">
-          <label for="description">Description</label>
-          <input id="description" type="text" placeholder="Sword" />
+          <label for="name">Item name</label>
+          <input data-bind="value: name" id="name" type="text" placeholder="Sword" />
         </div>
 
         <div class="field-group">
           <div class="field">
             <label for="icon">Icon</label>
-            <select id="icon">
-              <option value="bone">Bone</option>
-              <option value="ball">Ball</option>
-              <option value="circle">Circle</option>
-              <option value="rabbit">Rabbit</option>
+            <select data-bind="value: icon" id="icon">
+              <option value="icon-bone">Bone</option>
+              <option value="icon-ball">Ball</option>
+              <option value="icon-circle">Circle</option>
+              <option value="icon-rabbit">Rabbit</option>
             </select>
           </div>
 
           <div class="field">
             <label for="amount">Amount</label>
-            <input id="amount" type="number" />
+            <input data-bind="value: amount" id="amount" type="number" />
           </div>
         </div>
 
@@ -50,28 +50,14 @@
 
       <hr />
 
-      <ul>
+      <ul data-bind="foreach: items">
         <li>
           <span class="details">
-            <span class="icon icon-ball"></span>
-            <span class="description">Description</span>
-            <span class="amount">&times;12</span>
+            <span data-bind="class: $data.icon"></span>
+            <span data-bind="text: $data.name" class="name">name</span>
+            <span class="amount">&times; <span data-bind="text: $data.amount">12</span></span>
           </span>
-          <button>&times;</button>
-        </li>
-        <li>
-          <span>
-            <span>%ICON%</span>
-            <span>Description</span>
-          </span>
-          <button>&times;</button>
-        </li>
-        <li>
-          <span>
-            <span>%ICON%</span>
-            <span>Description</span>
-          </span>
-          <button>&times;</button>
+          <button data-bind="click: $parent.removeItem">&times;</button>
         </li>
       </ul>
     </main>
