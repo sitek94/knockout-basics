@@ -12,7 +12,70 @@
 
 <body>
   <div id="root">
-    <h1 data-bind="text: title"></h1>
+    <header>
+      <h1>
+        Very Simple Inventory
+      </h1>
+    </header>
+
+    <hr />
+
+    <main>
+      <h2>Add item</h2>
+      <p>Enter the item details</p>
+
+      <form>
+        <div>
+          <label for="description">Description</label>
+          <input id="description" type="text" placeholder="Sword" />
+        </div>
+
+        <div>
+          <label for="icon">Icon</label>
+          <select id="icon">
+            <option value="bone">Bone</option>
+            <option value="ball">Ball</option>
+            <option value="circle">Circle</option>
+            <option value="rabbit">Rabbit</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="amount">Amount</label>
+          <input id="amount" type="number" />
+        </div>
+
+        <input type="submit" value="Add item" />
+      </form>
+
+      <ul>
+        <li>
+          <span>
+            <span>%ICON%</span>
+            <span>Description</span>
+          </span>
+          <span>&times;</span>
+        </li>
+        <li>
+          <span>
+            <span>%ICON%</span>
+            <span>Description</span>
+          </span>
+          <span>&times;</span>
+        </li>
+        <li>
+          <span>
+            <span>%ICON%</span>
+            <span>Description</span>
+          </span>
+          <span>&times;</span>
+        </li>
+      </ul>
+
+    </main>
+    <footer>
+      <h3>Let's learn Knockout</h3>
+    </footer>
   </div>
 
   <script src="knockout-3.5.1.js"></script>
