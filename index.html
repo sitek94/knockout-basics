@@ -11,11 +11,9 @@
 </head>
 
 <body>
-  <div id="root">
+  <div id="root" class="card">
     <header>
-      <h1>
-        Very Simple Inventory
-      </h1>
+      Very Simple Inventory
     </header>
 
     <hr />
@@ -25,54 +23,61 @@
       <p>Enter the item details</p>
 
       <form>
-        <div>
+        <div class="field">
           <label for="description">Description</label>
           <input id="description" type="text" placeholder="Sword" />
         </div>
 
-        <div>
-          <label for="icon">Icon</label>
-          <select id="icon">
-            <option value="bone">Bone</option>
-            <option value="ball">Ball</option>
-            <option value="circle">Circle</option>
-            <option value="rabbit">Rabbit</option>
-          </select>
-        </div>
+        <div class="field-group">
+          <div class="field">
+            <label for="icon">Icon</label>
+            <select id="icon">
+              <option value="bone">Bone</option>
+              <option value="ball">Ball</option>
+              <option value="circle">Circle</option>
+              <option value="rabbit">Rabbit</option>
+            </select>
+          </div>
 
-        <div>
-          <label for="amount">Amount</label>
-          <input id="amount" type="number" />
+          <div class="field">
+            <label for="amount">Amount</label>
+            <input id="amount" type="number" />
+          </div>
         </div>
 
         <input type="submit" value="Add item" />
       </form>
 
+      <hr />
+
       <ul>
         <li>
-          <span>
-            <span>%ICON%</span>
-            <span>Description</span>
+          <span class="details">
+            <span class="icon icon-ball"></span>
+            <span class="description">Description</span>
+            <span class="amount">&times;12</span>
           </span>
-          <span>&times;</span>
+          <button>&times;</button>
         </li>
         <li>
           <span>
             <span>%ICON%</span>
             <span>Description</span>
           </span>
-          <span>&times;</span>
+          <button>&times;</button>
         </li>
         <li>
           <span>
             <span>%ICON%</span>
             <span>Description</span>
           </span>
-          <span>&times;</span>
+          <button>&times;</button>
         </li>
       </ul>
-
     </main>
+
+    <hr />
+
     <footer>
       <h3>Let's learn Knockout</h3>
     </footer>
