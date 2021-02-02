@@ -39,10 +39,12 @@
           <div class="field">
             <label for="icon">Icon</label>
             <select data-bind="value: icon" id="icon">
-              <option value="icon-bone">Bone</option>
-              <option value="icon-ball">Ball</option>
-              <option value="icon-circle">Circle</option>
-              <option value="icon-rabbit">Rabbit</option>
+              <option value="sword">🗡 Sword</option>
+              <option value="chocolate">🍫 Chocolate</option>
+              <option value="chips">🍿 Chips</option>
+              <option value="egg">🥚 Egg</option>
+              <option value="bone">🦴 Bone</option>
+              <option value="bomb">💣 Bomb</option>
             </select>
           </div>
 
@@ -59,7 +61,6 @@
         <input type="submit" value="Add item" />
       </form>
 
-
       <hr />
 
       <div data-bind="visible: items().length === 0" class="no-items">
@@ -70,7 +71,7 @@
       <ul data-bind="foreach: items">
         <li>
           <span class="details">
-            <span data-bind="class: $data.icon"></span>
+            <span data-bind="text: $data.icon"></span>
             <span data-bind="text: $data.name" class="name">name</span>
             <span class="amount">&times; <span data-bind="text: $data.amount">12</span></span>
           </span>

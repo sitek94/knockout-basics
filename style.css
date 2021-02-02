@@ -146,6 +146,7 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0.5em;
 }
 li:hover {
   background-color: #e0e0e0;
@@ -178,31 +179,4 @@ li button {
 }
 .no-items p {
   margin: 0 !important;
-}
-
-/* =============== */
-/* ICONS */
-/* =============== */
-.icon-bone,
-.icon-ball,
-.icon-circle,
-.icon-rabbit {
-  width: 64px;
-  height: 64px;
-  image-rendering: pixelated;
-  display: inline-block;
-  background: url('./items.png') no-repeat no-repeat;
-  background-size: 256px;
-  vertical-align: middle;
-  position: relative;
-  top: -3px;
-}
-.icon-ball {
-  background-position: -64px;
-}
-.icon-circle {
-  background-position: -128px;
-}
-.icon-rabbit {
-  background-position: -192px;
 }

@@ -1,9 +1,17 @@
 var initialData = [
-  { id: 'bone', icon: 'icon-bone', name: 'Bone', amount: 1 },
-  { id: 'ball', icon: 'icon-ball', name: 'Ball', amount: 2 },
-  { id: 'circle', icon: 'icon-circle', name: 'Circle', amount: 3 },
-  { id: 'rabbit', icon: 'icon-rabbit', name: 'Rabbit', amount: 4 },
+  { id: 'bomb', icon: '💣', name: 'Bomb', amount: 4 },
+  { id: 'sword', icon: '🗡', name: 'Sword', amount: 12 },
+  { id: 'chocolate', icon: '🍫', name: 'Chocolate', amount: 7 },
 ];
+
+var icons = {
+  sword: '🗡',
+  chocolate: '🍫',
+  chips: '🍿',
+  egg: '🥚',
+  bone: '🦴',
+  bomb: '💣',
+};
 
 function InventoryViewModel() {
   var self = this;
@@ -26,7 +34,7 @@ function InventoryViewModel() {
     self.items.push({
       id: generateId(),
       name: newItem.name,
-      icon: newItem.icon,
+      icon: icons[newItem.icon],
       amount: newItem.amount,
     });
   };
