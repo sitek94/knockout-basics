@@ -124,6 +124,17 @@ input[type='submit']:disabled {
   border: 1px solid #ddd;
   cursor: inherit;
 }
+
+/* ERROR VALIDATION */
+.validationMessage {
+  color: red;
+  font-size: 0.8em;
+  margin-top: 0.2em;
+}
+input.error {
+  border: 1px solid red;
+}
+
 /* =============== */
 /* LIST */
 /* =============== */

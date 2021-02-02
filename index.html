@@ -27,7 +27,12 @@
       <form data-bind="submit: handleSubmit">
         <div class="field">
           <label for="name">Item name</label>
-          <input data-bind="value: name" id="name" type="text" placeholder="Sword" />
+          <input 
+            data-bind="value: name, css: { error: name.error() && name.isModified }" 
+            id="name" 
+            type="text"
+            placeholder="Sword" 
+          />
         </div>
 
         <div class="field-group">
@@ -43,7 +48,11 @@
 
           <div class="field">
             <label for="amount">Amount</label>
-            <input data-bind="value: amount" id="amount" type="number" />
+            <input 
+              data-bind="value: amount, css: { error: amount.error() && amount.isModified }" 
+              id="amount" 
+              type="number" 
+            />
           </div>
         </div>
 

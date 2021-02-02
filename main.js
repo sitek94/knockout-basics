@@ -1,4 +1,4 @@
-var dummyData = [
+var initialData = [
   { id: 'bone', icon: 'icon-bone', name: 'Bone', amount: 1 },
   { id: 'ball', icon: 'icon-ball', name: 'Ball', amount: 2 },
   { id: 'circle', icon: 'icon-circle', name: 'Circle', amount: 3 },
@@ -8,14 +8,19 @@ var dummyData = [
 function InventoryViewModel() {
   var self = this;
 
-  self.name = ko.observable('');
+  // State
+  self.name = ko.observable('').extend({
+    required: true,
+  });
   self.icon = ko.observable('bone');
-  self.amount = ko.observable();
+  self.amount = ko.observable().extend({
+    required: true,
+    min: 1,
+  });
+  self.items = ko.observableArray(initialData);
 
-  self.items = ko.observableArray(dummyData);
-
+  // Add new item
   self.addItem = function (newItem) {
-    console.log(newItem);
     if (!newItem) return;
 
     self.items.push({
@@ -26,11 +31,21 @@ function InventoryViewModel() {
     });
   };
 
+  // Remove item
   self.removeItem = function (item) {
     self.items.remove(item);
   };
 
+  // Submit the form
   self.handleSubmit = function () {
+    var errors = ko.validation.group(self);
+
+    console.log(errors);
+    if (errors().length > 0) {
+      errors.showAllMessages();
+      return;
+    }
+
     self.addItem({
       name: self.name(),
       icon: self.icon(),
