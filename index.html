@@ -19,8 +19,10 @@
     <hr />
 
     <main>
-      <h2>Add item</h2>
-      <p>Enter the item details</p>
+      <div>
+        <h2>Add item</h2>
+        <p>Enter the item details</p>
+      </div>
 
       <form data-bind="submit: handleSubmit">
         <div class="field">
@@ -48,7 +50,13 @@
         <input type="submit" value="Add item" />
       </form>
 
+
       <hr />
+
+      <div data-bind="visible: items().length === 0" class="no-items">
+        <h2>No items</h2>
+        <p>Start adding items and you'll see them here</p>
+      </div>
 
       <ul data-bind="foreach: items">
         <li>

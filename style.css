@@ -161,6 +161,14 @@ li button {
   height: 32px;
 }
 
+/* NO ITEMS */
+.no-items {
+  margin-top: 1em;
+}
+.no-items p {
+  margin: 0 !important;
+}
+
 /* =============== */
 /* ICONS */
 /* =============== */
